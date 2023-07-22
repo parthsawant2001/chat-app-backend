@@ -1,9 +1,8 @@
-const asyncHandler = require('express-async-Handler');
 const Message = require('../Models/messageModel');
 const User = require('../Models/userModel');
 const Chat = require('../Models/chatModel');
 
-const sendMessage = asyncHandler(async (req, res) => {
+const sendMessage = async (req, res) => {
   const { content, chatId } = req.body;
 
   if (!content || !chatId) {
@@ -34,7 +33,7 @@ const sendMessage = asyncHandler(async (req, res) => {
     res.status(400);
     console.log(error.message);
   }
-});
+};
 
 const allMessage = asyncHandler(async (req, res) => {
   try {

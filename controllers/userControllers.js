@@ -1,8 +1,7 @@
-const asyncHandler = require('express-async-handler');
 const User = require('../Models/userModel');
 const generateToken = require('../config/generateToken');
 
-const registerUser = asyncHandler(async (req, res) => {
+const registerUser = async (req, res) => {
   const { name, email, password, pic } = req.body;
   if (!name || !email || !password) {
     res.status(400);
@@ -30,7 +29,7 @@ const registerUser = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error('Failed to generate user.');
   }
-});
+};
 
 const authUser = asyncHandler(async (req, res) => {
   const { email, password } = req.body;

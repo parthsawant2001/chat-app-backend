@@ -1,8 +1,7 @@
-const asyncHandler = require('express-async-handler');
 const Chat = require('../Models/chatModel');
 const User = require('../Models/userModel');
 
-const accessChat = asyncHandler(async (req, res) => {
+const accessChat = async (req, res) => {
   const { userId } = req.body;
   if (!userId) {
     console.log('UserId param not sent with request.');
@@ -42,7 +41,7 @@ const accessChat = asyncHandler(async (req, res) => {
       throw new Error(error.message);
     }
   }
-});
+};
 
 const fetchChats = asyncHandler(async (req, res) => {
   try {

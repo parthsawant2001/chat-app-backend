@@ -27,20 +27,7 @@ app.use('/api/user', useRoutes);
 app.use('/api/chat', chatRoutes);
 app.use('/api/message', messageRoutes);
 
-const __dirname1 = path.resolve();
-if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname1, '/frontend/build')));
-
-  app.get('*', (req, res) =>
-    res.sendFile(path.resolve(__dirname1, '/frontend', 'build', 'index.html'))
-  );
-} else {
-  app.get('/', (req, res) => {
-    res.send('API is running..');
-  });
-}
-
-const server = app.listen(PORT, console.log(`Server running on PORT:${PORT}`));
+app.listen(PORT, console.log(`Server running on PORT:${PORT}`));
 
 const io = require('socket.io')(server, {
   pingTimeout: 60000,

@@ -16,6 +16,7 @@ app.use(
       'https://chat-app-frontend-parthsawant2001.vercel.app',
       'https://chat-app-frontend-git-main-parthsawant2001.vercel.app',
       'https://chat-app-frontend-rho.vercel.app',
+      'https://chat-app-frontend-2bvtovz3n-parthsawant2001.vercel.app',
     ],
   })
 );
@@ -43,6 +44,7 @@ const io = require('socket.io')(server, {
     'https://chat-app-frontend-parthsawant2001.vercel.app',
     'https://chat-app-frontend-git-main-parthsawant2001.vercel.app',
     'https://chat-app-frontend-rho.vercel.app',
+    'https://chat-app-frontend-2bvtovz3n-parthsawant2001.vercel.app',
   ],
 });
 

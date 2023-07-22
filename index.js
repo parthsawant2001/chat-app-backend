@@ -44,7 +44,7 @@ const server = app.listen(PORT, console.log(`Server running on PORT:${PORT}`));
 
 const io = require('socket.io')(server, {
   pingTimeout: 60000,
-  cors: 'http://localhost:3001',
+  cors: 'https://chat-app-frontend-gai7.onrender.com',
 });
 
 io.on('connection', (socket) => {

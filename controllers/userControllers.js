@@ -31,7 +31,7 @@ const registerUser = async (req, res) => {
   }
 };
 
-const authUser = asyncHandler(async (req, res) => {
+const authUser = async (req, res) => {
   const { email, password } = req.body;
   const user = await User.findOne({ email });
   if (user && (await user.matchPassword(password))) {
@@ -47,7 +47,7 @@ const authUser = asyncHandler(async (req, res) => {
     res.status(401);
     throw new Error('invalid email or password');
   }
-});
+};
 
 const allUsers = asyncHandler(async (req, res) => {
   const keyword = req.query.search

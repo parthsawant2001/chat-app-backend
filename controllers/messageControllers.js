@@ -35,7 +35,7 @@ const sendMessage = async (req, res) => {
   }
 };
 
-const allMessage = asyncHandler(async (req, res) => {
+const allMessage = async (req, res) => {
   try {
     const messages = await Message.find({
       chat: req.params.chatId,
@@ -47,6 +47,6 @@ const allMessage = asyncHandler(async (req, res) => {
     res.status(400);
     throw new Error(error.message);
   }
-});
+};
 
 module.exports = { sendMessage, allMessage };

@@ -13,9 +13,9 @@ const app = express();
 app.use(
   cors({
     origin: [
-      'https://chat-app-frontend-parthsawant2001.vercel.app/',
-      'https://chat-app-frontend-git-main-parthsawant2001.vercel.app/',
-      'https://chat-app-frontend-rho.vercel.app/',
+      'https://chat-app-frontend-parthsawant2001.vercel.app',
+      'https://chat-app-frontend-git-main-parthsawant2001.vercel.app',
+      'https://chat-app-frontend-rho.vercel.app',
     ],
   })
 );
@@ -40,9 +40,9 @@ const server = app.listen(PORT, console.log(`Server running on PORT:${PORT}`));
 const io = require('socket.io')(server, {
   pingTimeout: 60000,
   cors: [
-    'https://chat-app-frontend-parthsawant2001.vercel.app/',
-    'https://chat-app-frontend-git-main-parthsawant2001.vercel.app/',
-    'https://chat-app-frontend-rho.vercel.app/',
+    'https://chat-app-frontend-parthsawant2001.vercel.app',
+    'https://chat-app-frontend-git-main-parthsawant2001.vercel.app',
+    'https://chat-app-frontend-rho.vercel.app',
   ],
 });
 
